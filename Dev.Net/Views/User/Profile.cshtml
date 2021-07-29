@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    User current = ViewBag.currentuser as User;
+   
+}
+   
+<h1>@current.Name  @current.Surname</h1>
+<table>
+    <tr>
+        <td><a class="nav-link" href="/Car/AddCar/">Add Car</a></td>
+    </tr>
+</table>
+
+

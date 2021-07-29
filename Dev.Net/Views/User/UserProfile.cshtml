@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "UserProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+        User u = ViewBag.currentuser as User;
+}
+
+<h1>@u.Name </h1>
+<table class="table table-dark">
+    <tr>
+         <th>@u.Name s car</th>
+    </tr>
+     @foreach(Car elm in ViewBag.currentcar)
+     {
+         if (elm.user == u)
+         {
+            <tr>
+                <td>@elm.Model</td>
+                <td>@elm.Color</td>
+                <td> <a href="/User/RemoveCars/@elm.Id">Remove</a></td>
+            </tr>
+         }
+     }
+</table>
+

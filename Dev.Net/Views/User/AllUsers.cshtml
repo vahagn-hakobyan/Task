@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "AllUsers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>All Users</h1>
+<div class="text-center">
+    <table class="table table-dark">
+        <tr>
+            <th>User Name </th>
+            <th>User Surname</th>
+            <th>Edit</th>
+
+        </tr>
+        @foreach (User elm in ViewBag.allusers)
+        {
+
+    <tr>
+        <td> <a href="/User/UserProfile/@elm.Id">@elm.Name</a> </td>
+        <td>@elm.Surname</td>
+        <td> <a href="/User/DeliteUser/@elm.Id"> Delite</a></td>
+        
+    </tr>
+          
+         }
+    </table>
+    </div>
+@*<div class="text-center">
+    <table class="table table-dark">
+        <tr>
+            <th>Car model </th>
+            <th>Car color</th>
+
+        </tr>
+        @foreach (Car elm in ViewBag.currentcar)
+        {
+
+            <tr>
+                <td> <a href="/User/UserProfile/@elm.Id">@elm.Model</a> </td>
+                <td>@elm.Color</td>
+
+            </tr>
+
+        }
+    </table>
+</div>*@
+
